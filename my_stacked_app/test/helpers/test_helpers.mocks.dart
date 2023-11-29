@@ -9,6 +9,7 @@ import 'dart:ui' as _i6;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
+import 'package:my_stacked_app/models/book.dart' as _i8;
 import 'package:my_stacked_app/services/api_service.dart' as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i2;
 
@@ -673,14 +674,15 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 /// See the documentation for Mockito's code generation for more information.
 class MockApiService extends _i1.Mock implements _i7.ApiService {
   @override
-  _i5.Future<List<dynamic>> getBooks({String? genreType = r'computers'}) =>
+  _i5.Future<List<_i8.Book>> getBooks({String? genreType = r'computers'}) =>
       (super.noSuchMethod(
         Invocation.method(
           #getBooks,
           [],
           {#genreType: genreType},
         ),
-        returnValue: _i5.Future<List<dynamic>>.value(<dynamic>[]),
-        returnValueForMissingStub: _i5.Future<List<dynamic>>.value(<dynamic>[]),
-      ) as _i5.Future<List<dynamic>>);
+        returnValue: _i5.Future<List<_i8.Book>>.value(<_i8.Book>[]),
+        returnValueForMissingStub:
+            _i5.Future<List<_i8.Book>>.value(<_i8.Book>[]),
+      ) as _i5.Future<List<_i8.Book>>);
 }
