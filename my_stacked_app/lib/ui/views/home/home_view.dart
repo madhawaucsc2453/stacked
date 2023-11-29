@@ -27,7 +27,7 @@ class HomeView extends StackedView<HomeViewModel> {
               final book=viewModel.data?[index];
                return Card(
                  child: ListTile(
-                  title: Text(book? ?? ''),
+                  title: Text(book?.title ?? ''),
 
                  ),
                );

@@ -20,13 +20,21 @@ Name _$NameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Name {
+  String get name => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NameCopyWith<Name> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NameCopyWith<$Res> {
   factory $NameCopyWith(Name value, $Res Function(Name) then) =
       _$NameCopyWithImpl<$Res, Name>;
+  @useResult
+  $Res call({String name, String username, String email});
 }
 
 /// @nodoc
@@ -38,13 +46,39 @@ class _$NameCopyWithImpl<$Res, $Val extends Name>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? username = null,
+    Object? email = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$NameImplCopyWith<$Res> {
+abstract class _$$NameImplCopyWith<$Res> implements $NameCopyWith<$Res> {
   factory _$$NameImplCopyWith(
           _$NameImpl value, $Res Function(_$NameImpl) then) =
       __$$NameImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String username, String email});
 }
 
 /// @nodoc
@@ -53,30 +87,71 @@ class __$$NameImplCopyWithImpl<$Res>
     implements _$$NameImplCopyWith<$Res> {
   __$$NameImplCopyWithImpl(_$NameImpl _value, $Res Function(_$NameImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? username = null,
+    Object? email = null,
+  }) {
+    return _then(_$NameImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$NameImpl implements _Name {
-  _$NameImpl();
+  _$NameImpl({required this.name, required this.username, required this.email});
 
   factory _$NameImpl.fromJson(Map<String, dynamic> json) =>
       _$$NameImplFromJson(json);
 
   @override
+  final String name;
+  @override
+  final String username;
+  @override
+  final String email;
+
+  @override
   String toString() {
-    return 'Name()';
+    return 'Name(name: $name, username: $username, email: $email)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NameImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$NameImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, name, username, email);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      __$$NameImplCopyWithImpl<_$NameImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -87,7 +162,21 @@ class _$NameImpl implements _Name {
 }
 
 abstract class _Name implements Name {
-  factory _Name() = _$NameImpl;
+  factory _Name(
+      {required final String name,
+      required final String username,
+      required final String email}) = _$NameImpl;
 
   factory _Name.fromJson(Map<String, dynamic> json) = _$NameImpl.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get username;
+  @override
+  String get email;
+  @override
+  @JsonKey(ignore: true)
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
