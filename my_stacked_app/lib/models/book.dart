@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:my_stacked_app/models/image_links.dart';
 
-@reezed
+@freezed
 
 class  Book with _$Book {
   factory Book({
